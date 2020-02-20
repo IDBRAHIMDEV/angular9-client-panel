@@ -1,0 +1,35 @@
+
+<div class="row my-4">
+    <div class="col-md-6">
+        <h1>List of clients</h1>
+    </div>
+    <div class="col-md-6 text-right">
+        <a routerLink="/clients/create" class="btn btn-success btn-sm">
+            <i class="fa fa-plus"></i> New client
+        </a>
+    </div>
+</div>
+<div class="row my-3">
+    <div class="col-md-12">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>FullName</th>
+                <th>Infos</th>
+                <th>Balance</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of clients">
+                <td>{{ client.firstName | titlecase }} {{ client.lastName | uppercase }}</td>
+                <td> <span class="badge badge-primary">phone</span>  {{ client.phone }} - <span class="badge badge-warning">email</span>  {{ client.email }}</td>
+                <td>{{ client.balance | currency:'GBP':'symbol':'1.2-3' }}</td>
+                <td>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
