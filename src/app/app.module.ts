@@ -12,6 +12,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
@@ -31,7 +33,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
