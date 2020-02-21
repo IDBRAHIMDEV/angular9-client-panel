@@ -18,7 +18,21 @@ export class ListClientComponent implements OnInit {
   }
 
   getAllClient() {
-    this.clientService.getAll().subscribe((response: Client[]) => this.clients = response);
+    this.clientService.getAll().subscribe((response: Client[]) => {
+      this.clients = response
+      console.log(response)
+    });
+  }
+
+  destroyClient(id: string) {
+    
+    if(!confirm('Are you sure to delete this item ?')) {
+      return;
+    }
+
+    this.clientService.delete(id)
+        .then(() => console.log('deleted'))
+        .catch((err) => console.log(err))
   }
 
 }

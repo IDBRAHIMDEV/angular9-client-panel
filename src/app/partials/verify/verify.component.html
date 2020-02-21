@@ -1,0 +1,7 @@
+<div *ngIf="currentUser && !currentUser.emailVerified" class="mb-3 alert alert-danger alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+    </button>
+    <strong>Holy guacamole!</strong> You didn't verify your email yet !
+  </div>

@@ -21,12 +21,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let client of clients">
+            <tr (dblclick)="destroyClient(client.id)" *ngFor="let client of clients">
                 <td>{{ client.firstName | titlecase }} {{ client.lastName | uppercase }}</td>
                 <td> <span class="badge badge-primary">phone</span>  {{ client.phone }} - <span class="badge badge-warning">email</span>  {{ client.email }}</td>
                 <td>{{ client.balance | currency:'GBP':'symbol':'1.2-3' }}</td>
                 <td>
-
+                    <a [routerLink]="['/clients', client.id, 'edit']" class="btn btn-warning mr-1 btn-sm"><i class="fa fa-pencil"></i></a>
+                    <button (click)="destroyClient(client.id)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                 </td>
             </tr>
         </tbody>
